@@ -1,6 +1,10 @@
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<div class="page-header">
 <h2>The Business Model Canvas</h2>
-
-<div class="canvas panel panel-info">
+</div>
+<div class="jumbotron jumb-cust">
+<div id="draggable" class="ui-widget-content canvas panel panel-info">
 <div class="panel-heading">
     <h3 class="panel-title">Key Partners</h3>
   </div>
@@ -13,7 +17,7 @@
 	<div class="items">
 		<ul>
 		<% @items.each do |item| %>
-		<li><span class="label label-primary"><%=  item.title %></span></li>
+		<li><span class="label label-primary label-cust"><%=  item.title %></span></li>
 		<% end %>
 		</ul>
 	</div>
@@ -24,4 +28,11 @@
 		<% end %>
 	</div>
 	 </div>
+</div>
+</div>
+
+<div class="progress progress-striped active">
+  <div class="progress-bar"  role="progressbar" aria-valuenow="<%= @items.length %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @items.length %>%">
+    <span class="sr-only"><%= @items.length %>% Complete</span>
+  </div>
 </div>
