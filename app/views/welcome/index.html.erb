@@ -1,4 +1,25 @@
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+<h2>The Business Model Canvas</h2>
+
+<div class="canvas">
+	<div class="title">
+		Key Partners
+	</div>
+	<div class="input">
+		<%= form_tag("/add", method: "post") do %>
+  		<%= text_field_tag(:title) %>
+		<% end %>
+	</div>
+	<div class="items">
+		<ul>
+		<% @items.each do |item| %>
+		<li><%=  item.title %></li>
+		<% end %>
+		</ul>
+	</div>
+
+	<div class="footer">
+		<%= form_tag("/clear", method: "post") do %>
+		<%= submit_tag("Clear Items") %>
+		<% end %>
+	</div>
+</div>
